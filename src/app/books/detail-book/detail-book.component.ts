@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Book } from '../shared/book.model';
 import { BookService } from '../shared/book.service';
 import { ActivatedRoute } from '@angular/router';
+import { Author } from '../../authors/shared/author.model';
 
 @Component({
   selector: 'app-detail-book',
@@ -10,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DetailBookComponent implements OnInit {
   book: Book;
+  authors: Author[];
 
   constructor(
     private booksService: BookService,
@@ -25,8 +27,15 @@ export class DetailBookComponent implements OnInit {
     this.booksService.getBook(id)
       .subscribe(book => {
         this.book = book;
-        // this.getAuthorsBook(id);
+        //Para la comunicación entre componentes
+        this.getAuthorsBook(id);
       });
   }
+
+  getAuthorsBook(id: number) {
+    this.booksService.getAuthorsBook(id)
+      .subscribe(authors => this.authors = authors);
+  }
+
 
 }

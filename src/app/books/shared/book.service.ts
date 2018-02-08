@@ -2,10 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { Book } from './book.model';
+import { Author } from '../../authors/shared/author.model';
 
 @Injectable()
 export class BookService {
   urlBooks = 'http://fakerestapi.azurewebsites.net/api/Books';
+  urlAuthorsBook = 'https://fakerestapi.azurewebsites.net/authors/books/';
 
   constructor(private http: HttpClient) { }
 
@@ -16,5 +18,10 @@ export class BookService {
   getBook(ID: number): Observable<Book> {
     // alert("getBook("+ID+")");
     return this.http.get<Book>(`${this.urlBooks}/${ID}`);
+  }
+
+  getAuthorsBook(IDBook: number): Observable<Author[]> {
+    // alert("getAuthorsBook("+IDBook+")");
+    return this.http.get<Author[]>(`${this.urlAuthorsBook}/${IDBook}`);    
   }
 }
