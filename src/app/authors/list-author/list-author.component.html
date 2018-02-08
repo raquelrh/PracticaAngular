@@ -1,0 +1,9 @@
+<!-- <p>
+  list-author works!
+</p> -->
+
+<div *ngFor="let author of authors">
+    <app-author [author]="author"></app-author>
+    <button (click)="onClick(author.ID)">Detalles</button>
+    <hr>
+</div>

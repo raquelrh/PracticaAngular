@@ -25,7 +25,7 @@ export class DetailBookComponent implements OnInit {
     this.booksService.getBook(id)
       .subscribe(book => {
         this.book = book;
-        // this.getPostsUsuario(id);
+        // this.getAuthorsBook(id);
       });
   }
 
