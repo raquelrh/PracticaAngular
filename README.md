@@ -1,5 +1,16 @@
 # PracticaAngular
 
+Práctica desarrollada para el Curso de Experto en Full-stack de la Universidad de Salamanca
+
+Desarrollo de una SPA (Single Page Application) con el Framework Angular que haga uso de una API REST pública.
+
+## Grupo Avengers
+### Componentes
++ Raquel Rodríguez 
++ Héctor Rodríguez 
++ Óscar Pérez
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.6.
 
 ## Development server
@@ -25,3 +36,5 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
