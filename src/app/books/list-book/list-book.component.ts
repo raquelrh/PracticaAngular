@@ -1,6 +1,7 @@
 import { Component, OnInit,  Input} from '@angular/core';
 import { Router } from '@angular/router';
 import { Book } from '../shared/book.model';
+import { BookService } from '../shared/book.service';
 
 @Component({
   selector: 'app-list-book',
@@ -11,15 +12,24 @@ import { Book } from '../shared/book.model';
 export class ListBookComponent implements OnInit {
   @Input() books: Book[];
 
-  constructor(
+  constructor(private bookService: BookService,
     private router: Router
   ) { }
 
   ngOnInit() {
+    this.getBooks();
   }
 
-  // onClick(ID: number) {    
-  //   this.router.navigateByUrl(`books/${ID}`);
-  // }
+  getBooks(): void {
+    this.bookService.getBooks()
+      .subscribe(
+        books => this.books = books,
+        error => console.error
+      );
+  }
+
+  onClick(id: number): void {
+    this.router.navigateByUrl(`books/${id}`);
+  }
 
 }

@@ -25,7 +25,7 @@ export class PageBookComponent implements OnInit {
     this.getBooks();
   }
 
-  getBooks() {   
+  getBooks() {
     this.booksService.getBooks()
       .subscribe(books => this.books = books);
   }

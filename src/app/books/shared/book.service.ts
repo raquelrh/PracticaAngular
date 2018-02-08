@@ -14,6 +14,7 @@ export class BookService {
   }
 
   getBook(ID: number): Observable<Book> {
+    // alert("getBook("+ID+")");
     return this.http.get<Book>(`${this.urlBooks}/${ID}`);
   }
 }

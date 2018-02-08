@@ -4,4 +4,5 @@ export class Book {
     PageCount: number;
     Description: string;
     Excerpt: string;
+    PublishDate: string;
  }
