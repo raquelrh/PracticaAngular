@@ -1,8 +1,5 @@
-<!-- <p>
-  list-book works!
-</p> -->
-
 <div *ngFor="let book of books">
   <app-book [book]="book"></app-book>
   <button (click)="onClick(book.ID)">Detalles</button>
+  <hr>
 </div>

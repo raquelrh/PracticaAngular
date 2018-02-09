@@ -1,0 +1,7 @@
+<div>
+    <label>Ordenar por: </label>
+    <select (change)="onChange($event)">
+      <!-- <option value="ID">Id</option> -->
+      <option *ngFor="let opcion of opciones" [value]="opcion.value">{{opcion.text}}</option>
+    </select>
+</div>

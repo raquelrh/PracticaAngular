@@ -1,9 +1,23 @@
-<!-- <p>
-  book works!
-</p> -->
-
-<hr>
-<div>
-  Id: {{book.ID}}
-  <br> Título: {{book.Title}}
-</div>
+<table>
+    <tr>
+      <th>ID</th>
+      <td>{{book.ID}}</td>
+      <th>Título</th>
+      <td>{{book.Title}}</td>
+      <th>Nº de páginas</th>
+      <td>{{book.PageCount}}</td>
+    </tr>
+    <tr>
+      <th>Fecha de publicación</th>
+      <td colspan="5">{{book.PublishDate| date:'dd/MM/yyyy'}}</td>
+    </tr>
+    <tr>
+      <th>Descripción</th>
+      <td colspan="5">{{book.Description.substr(0,100)}}</td>
+    </tr>
+    <tr>
+      <th>Extracto</th>
+      <td colspan="5">{{book.Excerpt.substr(0,200)}}</td>
+    </tr>
+  </table>
+ 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BookService } from '../shared/book.service';
 import { Book } from '../shared/book.model';
-// import { Opcion } from '../../core/shared/opcion.model';
+import { Opcion } from '../../core/shared/option.model';
 
 @Component({
   selector: 'app-page-book',
@@ -10,15 +10,16 @@ import { Book } from '../shared/book.model';
 })
 export class PageBookComponent implements OnInit {
   books: Book[];
-  // options: Opcion[];
-  // orderBy: string;
+  opciones: Opcion[];
+  orderBy: string;
 
   constructor(private booksService: BookService) {
-    // this.options = [
-    //   {text: 'ID', value: 'ID'},
-    //   {text: 'Título', value: 'título'},
-    //   {text: 'Descripción', value: 'descripcion'},
-    // ];
+    this.opciones = [    
+      {text: 'Id', value: 'ID'},
+      {text: 'Título', value: 'Title'},
+      {text: 'Descripción', value: 'Description'},
+      {text: 'N. Páginas', value: 'PageCount'},
+    ];
   }
 
   ngOnInit() {
@@ -28,6 +29,10 @@ export class PageBookComponent implements OnInit {
   getBooks() {
     this.booksService.getBooks()
       .subscribe(books => this.books = books);
+  }
+
+  onOrderBy(order: string) {
+    this.orderBy = order;
   }
 
 }
