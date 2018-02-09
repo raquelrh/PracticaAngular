@@ -7,6 +7,8 @@ import { CoreService } from './shared/core.service';
   imports: [
     CommonModule
   ],
+  //OJO Recordar que los exports no se hacen automáticamente
+  exports: [FilterComponent],
   declarations: [FilterComponent],
   providers: [CoreService]
 })

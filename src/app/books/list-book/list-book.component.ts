@@ -10,7 +10,7 @@ import { CoreService } from '../../core/shared/core.service';
   styleUrls: ['./list-book.component.css']
 })
 
-export class ListBookComponent implements OnInit/*, OnChanges*/ {
+export class ListBookComponent implements OnInit, OnChanges {
   @Input() books: Book[];
   @Input() orderBy: string;
 
@@ -31,11 +31,11 @@ export class ListBookComponent implements OnInit/*, OnChanges*/ {
       );
   }
 
-  // ngOnChanges(changes: SimpleChanges) {
-  //   if (changes.orderBy && changes.orderBy.currentValue) {
-  //     this.coreService.sort(this.books, changes.orderBy.currentValue);
-  //   }
-  // }
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes.orderBy && changes.orderBy.currentValue) {
+      this.coreService.sort(this.books, changes.orderBy.currentValue);
+    }
+  }
 
   onClick(id: number): void {
     this.router.navigateByUrl(`books/${id}`);

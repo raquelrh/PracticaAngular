@@ -17,8 +17,8 @@ import { CoreModule } from '../core/core.module';
     CommonModule,
     HttpClientModule,
     RouterModule,
-    AuthorsModule,
-    CoreModule
+    CoreModule,
+    AuthorsModule 
   ],
    // por defecto no xporta los componentes
   exports: [BookComponent, ListBookComponent, DetailBookComponent, PageBookComponent, CreateBookComponent],

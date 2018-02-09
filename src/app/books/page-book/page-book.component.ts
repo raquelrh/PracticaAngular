@@ -10,15 +10,16 @@ import { Opcion } from '../../core/shared/option.model';
 })
 export class PageBookComponent implements OnInit {
   books: Book[];
-  // opciones: Opcion[];
-  // orderBy: string;
+  opciones: Opcion[];
+  orderBy: string;
 
   constructor(private booksService: BookService) {
-    // this.opciones = [
-    //   {text: 'ID', value: 'ID'},
-    //   {text: 'Título', value: 'Title'},
-    //   {text: 'Descripción', value: 'Description'},
-    // ];
+    this.opciones = [    
+      {text: 'Id', value: 'ID'},
+      {text: 'Título', value: 'Title'},
+      {text: 'Descripción', value: 'Description'},
+      {text: 'N. Páginas', value: 'PageCount'},
+    ];
   }
 
   ngOnInit() {
@@ -30,8 +31,8 @@ export class PageBookComponent implements OnInit {
       .subscribe(books => this.books = books);
   }
 
-  // onOrderBy(order: string) {
-  //   this.orderBy = order;
-  // }
+  onOrderBy(order: string) {
+    this.orderBy = order;
+  }
 
 }
