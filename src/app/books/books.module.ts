@@ -11,14 +11,16 @@ import { BookService } from './shared/book.service';
 import { AuthorsModule } from '../authors/authors.module';
 import { CreateBookComponent } from './create-book/create-book.component';
 import { CoreModule } from '../core/core.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
     HttpClientModule,
     RouterModule,
+    ReactiveFormsModule,
     CoreModule,
-    AuthorsModule 
+    AuthorsModule
   ],
    // por defecto no xporta los componentes
   exports: [BookComponent, ListBookComponent, DetailBookComponent, PageBookComponent, CreateBookComponent],

@@ -7,7 +7,8 @@ import { Author } from '../../authors/shared/author.model';
 @Injectable()
 export class BookService {
   urlBooks = 'http://fakerestapi.azurewebsites.net/api/Books';
-  urlAuthorsBook = 'https://fakerestapi.azurewebsites.net/authors/books/';
+  urlAuthorsBook = 'https://fakerestapi.azurewebsites.net/api/Authors/books/';
+  urlAuthors = 'https://fakerestapi.azurewebsites.net/api/Authors';
 
   constructor(private http: HttpClient) { }
 
@@ -21,7 +22,16 @@ export class BookService {
   }
 
   getAuthorsBook(IDBook: number): Observable<Author[]> {
-    // alert("getAuthorsBook("+IDBook+")");
-    return this.http.get<Author[]>(`${this.urlAuthorsBook}/${IDBook}`);    
+    // alert("getAuthorsBook("+IDBook+")")
+    if (IDBook != null) {
+      return this.http.get<Author[]>(`${this.urlAuthorsBook}/${IDBook}`);
+    } else {
+      return this.http.get<Author[]>(`${this.urlAuthors}`);
+    }
   }
+
+  postBook(book: any): Observable<Book> {
+    return this.http.post<Book>(this.urlBooks, book);
+  }
+
 }

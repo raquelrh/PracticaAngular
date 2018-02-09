@@ -7,10 +7,12 @@ import { AuthorComponent } from './authors/author/author.component';
 import { ListAuthorComponent } from './authors/list-author/list-author.component';
 import { DetailAuthorComponent } from './authors/detail-author/detail-author.component';
 import { PageBookComponent } from './books/page-book/page-book.component';
+import { CreateBookComponent } from './books/create-book/create-book.component';
 
 const routes: Routes = [
   { path: 'books', component: PageBookComponent},
   { path: 'books/:id', component: DetailBookComponent },
+  { path: 'create/book', component: CreateBookComponent},
   { path: 'authors', component: ListAuthorComponent},
   { path: 'authors/:id', component: DetailAuthorComponent },
 ];

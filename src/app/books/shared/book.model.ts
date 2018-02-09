@@ -5,4 +5,5 @@ export class Book {
     Description: string;
     Excerpt: string;
     PublishDate: string;
+    AuthorsId: string[];
  }

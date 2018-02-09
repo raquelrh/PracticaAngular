@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from '../shared/book.model';
-import { BookService } from '../shared/book.service';
 import { ActivatedRoute } from '@angular/router';
 import { Author } from '../../authors/shared/author.model';
+import { BookService } from '../shared/book.service';
 
 @Component({
   selector: 'app-detail-book',
@@ -27,7 +27,7 @@ export class DetailBookComponent implements OnInit {
     this.booksService.getBook(id)
       .subscribe(book => {
         this.book = book;
-        //Para la comunicación entre componentes
+        // Para la comunicación entre componentes
         this.getAuthorsBook(id);
       });
   }

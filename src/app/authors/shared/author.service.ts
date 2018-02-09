@@ -6,7 +6,7 @@ import { Author } from './author.model';
 @Injectable()
 export class AuthorService {
   urlAuthor = 'http://fakerestapi.azurewebsites.net/api/Authors';
- 
+
   constructor(private http: HttpClient) { }
 
   getAuthors(): Observable<Author[]> {

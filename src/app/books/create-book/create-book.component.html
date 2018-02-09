@@ -1,3 +1,35 @@
-<p>
-  create-book works!
-</p>
+<form [formGroup]="bookForm" (submit)="onSubmit()">
+  <div>
+    <label>Título:</label>
+    <br>
+    <input type="text" formControlName="Title">
+  </div>
+  <div>
+    <label>Nº de páginas:</label>
+    <br>
+    <input type="number" formControlName="PageCount">
+  </div>
+  <div>
+    <label>Fecha de publicación:</label>
+    <br>
+    <input type="date" formControlName="PublishDate">
+  </div>
+  <div>
+    <label>Descripción:</label>
+    <br>
+    <textarea rows="2" cols="50" formControlName="Description"></textarea>
+  </div>
+  <div>
+    <label>Extracto:</label>
+    <br>
+    <textarea rows="2" cols="50" formControlName="Excerpt"></textarea>
+  </div>
+  <div>
+    <label>Autor:</label>
+    <select formControlName="AuthorsId" multiple>
+      <option value="">--id--</option>
+      <option *ngFor="let author of authors" [value]="author.ID">{{author.FirstName}} {{author.LastName}}</option>
+    </select>
+  </div>
+  <button type="submit" [disabled]="!bookForm.valid">Crear</button>
+</form>
