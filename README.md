@@ -6,9 +6,9 @@ Desarrollo de una SPA (Single Page Application) con el Framework Angular que hag
 
 ## Grupo Avengers
 ### Componentes
-+ Raquel Rodríguez 
-+ Héctor Rodríguez 
-+ Óscar Pérez
++ Raquel Rodríguez Hernández [[@raquelrh](https://github.com/raquelrh)]
++ Héctor Rodríguez Iglesias [[@hectorri](https://github.com/hectorri)]
++ Oscar Pérez Riaño [[@osperi](https://github.com/osperi)]
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.6.
